@@ -162,6 +162,7 @@ func (r *remoteImageService) PullImage(ctx context.Context, image *runtimeapi.Im
 }
 
 func (r *remoteImageService) pullImageV1(ctx context.Context, image *runtimeapi.ImageSpec, auth *runtimeapi.AuthConfig, podSandboxConfig *runtimeapi.PodSandboxConfig) (string, error) {
+	klog.Info("ASDASD Pulling image: %v using auth: %v", image, auth)
 	resp, err := r.imageClient.PullImage(ctx, &runtimeapi.PullImageRequest{
 		Image:         image,
 		Auth:          auth,
@@ -177,6 +178,7 @@ func (r *remoteImageService) pullImageV1(ctx context.Context, image *runtimeapi.
 		errorMessage := fmt.Sprintf("imageRef of image %q is not set", image.Image)
 		return "", errors.New(errorMessage)
 	}
+	klog.Info("ASDASD Pulling image: %v using auth: %v OK", image, auth)
 
 	return resp.ImageRef, nil
 }
