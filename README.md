@@ -25,7 +25,7 @@ read the CNCF [announcement].
 
 ## To start using K8s
 
-See our documentation on [kubernetes.io].
+Seee our documentation on [kubernetes.io].
 
 Take a free course on [Scalable Microservices with Kubernetes].
 
